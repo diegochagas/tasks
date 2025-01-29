@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tasks</title>
+    <link rel="stylesheet" href="src/index.css" />
+  </head>
+  <body>
+    <h1>Tasks</h1>
+
+    <h2></h2>
+
+    <button>Select task</button>
+
+    <ul></ul>
+
+    <script>
+      const tasks = ["Watch", "Read", "Side Hustle"];
+
+      tasks.forEach((task, index) => {
+        const span = document.createElement("span");
+        span.textContent = task;
+        document.querySelector("h2").textContent += `${index + 1}. ${task} `;
+      });
+
+      document.querySelector("button").addEventListener("click", () => {
+        const li = document.createElement("li");
+        li.textContent = tasks[Math.floor(Math.random() * tasks.length)];
+        document.querySelector("ul").appendChild(li);
+      });
+    </script>
+  </body>
+</html>
